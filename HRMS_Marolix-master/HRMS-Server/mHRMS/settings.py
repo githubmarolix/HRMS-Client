@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY', default='your_default_secret_key_here')
+SECRET_KEY = 'django-insecure-#cedo6k@mkcoy%!r2$wy$8h-(9x&ev+v%tvx+-k-o%)2jt$fb^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'mHRMS.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': config('DATABASE_NAME'),
-       'USER': config('DATABASE_USER'),
-       'PASSWORD': config('DATABASE_PASSWORD'),
-       'HOST': config('DATABASE_HOST'),
-       'PORT': config('DATABASE_PORT'),
+       'NAME': 'HRMS',
+       'USER': 'postgres'
+       'PASSWORD': 'uuuu1111'
+       'HOST': 'localhost'
+       'PORT': 5432
    }
 }
 
@@ -144,19 +144,19 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=360),
-    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=7),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=1),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
-EMAIL_USE_SSL = config('EMAIL_USE_SSL', default=False, cast=bool)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST =  'smtp.elasticemail.com'
+EMAIL_PORT =  2525
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = Flase
+EMAIL_HOST_USER = 'nihar@marolix.com'
+EMAIL_HOST_PASSWORD = 'C6050425D5DE4D829132626A42EF01D034D0'
+DEFAULT_FROM_EMAIL = 'nihar@marolix.com'
 
 
