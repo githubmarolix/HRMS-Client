@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'mHRMS.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'HRMS',
-       'USER': 'postgres'
-       'PASSWORD': 'uuuu1111'
-       'HOST': 'localhost'
+       'NAME': 'HRMS-PROD',
+       'USER': 'devuser'
+       'PASSWORD': 'Devuser#123'
+       'HOST': '216.48.191.120'
        'PORT': 5432
    }
 }
@@ -156,7 +156,22 @@ EMAIL_PORT =  2525
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = Flase
 EMAIL_HOST_USER = 'nihar@marolix.com'
-EMAIL_HOST_PASSWORD = 'C6050425D5DE4D829132626A42EF01D034D0'
+EMAIL_HOST_PASSWORD = '# DATABASE_NAME='HRMS-PROD'
+# DATABASE_USER='devuser'
+# DATABASE_PASSWORD='Devuser#123'
+# DATABASE_HOST='216.48.191.120'
+# DATABASE_PORT='5432'
+
+
+mailto:email_host_user='nihar@marolix.com'
+EMAIL_HOST_PASSWORD='C6050425D5DE4D829132626A42EF01D034D0'
+SECRET_KEY='django-insecure-#cedo6k@mkcoy%!r2$wy$8h-(9x&ev+v%tvx+-k-o%)2jt$fb^'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.elasticemail.com'
+EMAIL_PORT = 2525
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = 'mailto:nihar@marolix.com''
 DEFAULT_FROM_EMAIL = 'nihar@marolix.com'
 
 
